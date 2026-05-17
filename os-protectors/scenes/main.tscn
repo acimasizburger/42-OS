@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://nyaxmbhlxy67"]
 
 [ext_resource type="Texture2D" uid="uid://cbmdhgssfcpsb" path="res://assets/Background.png" id="1_am1vj"]
+[ext_resource type="Script" uid="uid://cd54d3gpa7d52" path="res://scenes/main.gd" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://l4dm8lbvx0x0" path="res://assets/Dock/Dock.png" id="2_g31lc"]
 [ext_resource type="Texture2D" uid="uid://dgdbcmmovhqsl" path="res://assets/Dock/Vscode.png" id="4_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cnivkj2qltoea" path="res://scenes/app_icons.tscn" id="6_tefeu"]
-[ext_resource type="PackedScene" path="res://scenes/cat_virus_pop_up.tscn" id="7_eh0v1"]
+[ext_resource type="Texture2D" uid="uid://b0haln6tc62w0" path="res://assets/pop ups/pop up 1.png" id="6_tipki"]
+[ext_resource type="PackedScene" uid="uid://dyvfhg4cbkr5d" path="res://scenes/popupscenes/cat_virus_pop_up.tscn" id="7_eh0v1"]
 [ext_resource type="PackedScene" uid="uid://dc5t4re66jk2i" path="res://scenes/vs_code.tscn" id="8_6a6wx"]
+[ext_resource type="PackedScene" uid="uid://tipkpnj40rl0" path="res://scenes/popupscenes/money_virus_pop_up.tscn" id="9_85g3d"]
 [ext_resource type="Script" uid="uid://72eunsxucj0u" path="res://pop_up_spawner.gd" id="9_sky72"]
+[ext_resource type="FontFile" uid="uid://dmdkaf5mkhs5b" path="res://assets/minecraftia/Minecraftia-Regular.ttf" id="11_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://cc0v0i45qhj1v" path="res://scenes/brave_browser.tscn" id="12_eb6dy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g31lc"]
 content_margin_top = 2.0
@@ -15,6 +20,9 @@ texture = ExtResource("2_g31lc")
 texture_margin_left = 4.0
 texture_margin_right = 4.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_knq72"]
+texture = ExtResource("6_tipki")
+
 [node name="Main" type="Control" unique_id=2128040512]
 layout_mode = 3
 anchors_preset = 15
@@ -22,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ya4ey")
 
 [node name="Arkaplan" type="TextureRect" parent="." unique_id=1844096807]
 layout_mode = 1
@@ -72,25 +81,46 @@ offset_left = 26.0
 offset_top = 16.0
 offset_right = 116.0
 offset_bottom = 70.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_knq72")
 
 [node name="VSCode" parent="." unique_id=1229481715 instance=ExtResource("8_6a6wx")]
 visible = true
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 191.0
-offset_bottom = 116.0
-kod_havuzu = Array[String](["printf()", "ft_split()"])
+offset_left = 82.0
+offset_top = 25.0
+offset_right = 273.0
+offset_bottom = 141.0
+kod_havuzu = Array[String](["printf()", "ft_split()", "push_swap()", "minishell()", ""])
 
 [node name="PopUpSpawner" type="Control" parent="." unique_id=1692848858]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("9_sky72")
+virus_sahneleri = Array[PackedScene]([ExtResource("7_eh0v1"), ExtResource("9_85g3d")])
 
 [node name="Timer" type="Timer" parent="PopUpSpawner" unique_id=1647426441]
 wait_time = 4.0
 autostart = true
+
+[node name="TaskGiver" type="PanelContainer" parent="." unique_id=339273340]
+layout_mode = 0
+offset_left = 271.0
+offset_right = 320.0
+offset_bottom = 40.0
+
+[node name="GorevLabel" type="Label" parent="TaskGiver" unique_id=1459356391]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_eb6dy")
+theme_override_font_sizes/font_size = 4
+text = "Kod YAZMAN gerek !"
+
+[node name="BraveBrowser" parent="." unique_id=72722398 instance=ExtResource("12_eb6dy")]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 32.0
+offset_right = 259.0
+offset_bottom = 159.0
 
 [connection signal="gui_input" from="Dock/Grid/VSCode" to="PopUpSpawner" method="_on_vs_code_gui_input"]
 

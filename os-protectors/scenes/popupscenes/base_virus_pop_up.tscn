@@ -1,24 +1,24 @@
-[gd_scene format=3 uid="uid://dyvfhg4cbkr5d"]
+[gd_scene format=3 uid="uid://dafpovwcn75ja"]
 
-[ext_resource type="Texture2D" uid="uid://b0haln6tc62w0" path="res://assets/pop ups/pop up 1.png" id="1_pptwy"]
-[ext_resource type="Script" uid="uid://bbme078s74j5l" path="res://scripts/cat_virus_pop_up.gd" id="2_rgunh"]
-[ext_resource type="Texture2D" uid="uid://blp71iyby4gpt" path="res://assets/67a68198b3c90_funny-silly-cats-pics.png" id="3_gjy4e"]
-[ext_resource type="Theme" uid="uid://lv0m26ck1q5p" path="res://font_theme.tres" id="4_5y6x3"]
+[ext_resource type="Texture2D" uid="uid://b0haln6tc62w0" path="res://assets/pop ups/pop up 1.png" id="1_gcfc5"]
+[ext_resource type="Script" uid="uid://bbme078s74j5l" path="res://scripts/cat_virus_pop_up.gd" id="2_8pqw6"]
+[ext_resource type="Texture2D" uid="uid://blp71iyby4gpt" path="res://assets/kedypopup.png" id="3_ffcqx"]
+[ext_resource type="Theme" uid="uid://lv0m26ck1q5p" path="res://font_theme.tres" id="4_klm2e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_knq72"]
-texture = ExtResource("1_pptwy")
+texture = ExtResource("1_gcfc5")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvdhi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oq4si"]
 
-[node name="CatVirusPopUp" type="Panel" unique_id=2098235997]
+[node name="BaseVirusPopUp" type="Panel" unique_id=2098235997]
 offset_left = 59.0
 offset_top = 40.0
 offset_right = 149.0
 offset_bottom = 94.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_knq72")
-script = ExtResource("2_rgunh")
+script = ExtResource("2_8pqw6")
 
 [node name="VirusUpBar" type="Panel" parent="." unique_id=903852164]
 layout_mode = 0
@@ -42,7 +42,7 @@ offset_bottom = 8.0
 theme_override_colors/icon_normal_color = Color(0.8352941, 0.08627451, 0.101960786, 1)
 flat = true
 
-[node name="CatPhoto" type="TextureRect" parent="." unique_id=108537332]
+[node name="VirusImage" type="TextureRect" parent="." unique_id=108537332]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -55,11 +55,10 @@ offset_right = 41.5
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
-texture = ExtResource("3_gjy4e")
+texture = ExtResource("3_ffcqx")
 expand_mode = 1
 
-[node name="FakeFileName" type="Label" parent="." unique_id=1871258792]
+[node name="VirusTitle" type="Label" parent="." unique_id=1871258792]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -68,9 +67,10 @@ offset_top = 1.0
 offset_right = -9.0
 offset_bottom = 8.0
 grow_horizontal = 2
-theme = ExtResource("4_5y6x3")
+theme = ExtResource("4_klm2e")
 text = "BanaMamaVer.dat"
 
 [connection signal="gui_input" from="VirusUpBar" to="." method="_on_virus_up_bar_gui_input"]
 [connection signal="pressed" from="VirusCloseBar/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="gui_input" from="CatPhoto" to="." method="_on_cat_photo_gui_input"]
+[connection signal="gui_input" from="VirusImage" to="." method="_on_virus_image_gui_input"]
+[connection signal="gui_input" from="VirusImage" to="." method="_on_cat_photo_gui_input"]

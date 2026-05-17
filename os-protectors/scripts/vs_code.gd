@@ -18,8 +18,11 @@ func _ready():
 	randomize()
 
 # Inspector üzerinden istediğimiz kadar kod ekleyebiliriz
-	var rastgele_indeks = randi() % kod_havuzu.size()
-	referance_label.text = kod_havuzu[rastgele_indeks]
+	if kod_havuzu.size() > 0:
+		var rastgele_indeks = randi() % kod_havuzu.size()
+		referance_label.text = kod_havuzu[rastgele_indeks]
+	else:
+		print("Liste şu an boş, işlem yapılamaz!")
 
 	close_button.hide() # Doğru kodu yazana kadar hide kalacak
 	
@@ -47,6 +50,7 @@ func _on_submitt_button_pressed() -> void:
 		terminal_label.text = "Başarılı: Kod derlendi! Çıkış yapabilirsiniz."
 		terminal_label.modulate = Color(0, 1, 0) 
 		close_button.show()
+		TaskManager.gorevi_tamamla("vscode_yazilim")
 	else:
 		terminal_label.text = "Başarısız: Kodu birebir aynı yazamadınız. Lütfen tekrar deneyin."
 		terminal_label.modulate = Color(1, 0, 0)

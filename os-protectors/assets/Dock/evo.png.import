@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5t3fyqany3nt"
-path="res://.godot/imported/Firefox.png-6aeca43922809fa25051198a40e24d66.ctex"
+uid="uid://dfkw1c53x103r"
+path="res://.godot/imported/evo.png-be7719f7738f7cb574c3c0a7b531fb17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Dock/Firefox.png"
-dest_files=["res://.godot/imported/Firefox.png-6aeca43922809fa25051198a40e24d66.ctex"]
+source_file="res://assets/Dock/evo.png"
+dest_files=["res://.godot/imported/evo.png-be7719f7738f7cb574c3c0a7b531fb17.ctex"]
 
 [params]
 

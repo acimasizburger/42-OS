@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cc0v0i45qhj1v"]
+
+[ext_resource type="Texture2D" uid="uid://cxx5pyxbwsmc7" path="res://assets/Apps/BraveWeb.png" id="1_667o6"]
+[ext_resource type="Script" uid="uid://dsks3np7ato1a" path="res://scenes/brave_browser.gd" id="2_lx22g"]
+[ext_resource type="Texture2D" uid="uid://dfkw1c53x103r" path="res://assets/Dock/evo.png" id="3_gnu25"]
+[ext_resource type="Texture2D" uid="uid://cgjytpma27igi" path="res://assets/Dock/a.png" id="4_nr16f"]
+
+[node name="BraveBrowser" type="TextureRect" unique_id=1229481715]
+offset_left = 16.0
+offset_top = 13.0
+offset_right = 207.0
+offset_bottom = 129.0
+texture = ExtResource("1_667o6")
+script = ExtResource("2_lx22g")
+
+[node name="CloseButton" type="Button" parent="." unique_id=670577285]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 204.0
+offset_top = 1.0
+offset_right = 212.0
+offset_bottom = 9.0
+flat = true
+
+[node name="BraveUpBar" type="Control" parent="." unique_id=434530244]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -9.0
+offset_bottom = 9.0
+grow_horizontal = 2
+
+[node name="EvoButton" type="TextureButton" parent="." unique_id=1190296377]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 32.0
+offset_right = 113.0
+offset_bottom = 82.0
+mouse_filter = 1
+texture_normal = ExtResource("3_gnu25")
+
+[node name="EvoAlButton" type="Button" parent="." unique_id=1649241504]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 111.0
+offset_right = 213.0
+offset_bottom = 127.0
+icon = ExtResource("4_nr16f")
+flat = true
+expand_icon = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="gui_input" from="BraveUpBar" to="." method="_on_brave_up_bar_gui_input"]
+[connection signal="mouse_entered" from="EvoButton" to="." method="_on_evo_button_mouse_entered"]
+[connection signal="pressed" from="EvoButton" to="." method="_on_evo_button_pressed"]
+[connection signal="pressed" from="EvoAlButton" to="." method="_on_evo_al_button_pressed"]

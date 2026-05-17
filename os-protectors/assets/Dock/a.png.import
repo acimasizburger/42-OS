@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsjeycsvhngg0"
-path="res://.godot/imported/visual-studio-code-logo.svg-be73ba08aaf53815b5484bd5c4ffdaab.ctex"
+uid="uid://cgjytpma27igi"
+path="res://.godot/imported/a.png-80933f7677d0a1764bb4164a1292b71e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual-studio-code-logo.svg"
-dest_files=["res://.godot/imported/visual-studio-code-logo.svg-be73ba08aaf53815b5484bd5c4ffdaab.ctex"]
+source_file="res://assets/Dock/a.png"
+dest_files=["res://.godot/imported/a.png-80933f7677d0a1764bb4164a1292b71e.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

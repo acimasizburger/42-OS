@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blp71iyby4gpt"
-path="res://.godot/imported/67a68198b3c90_funny-silly-cats-pics.png-8cc3c3962c0452f4b3a20a703071ffa4.ctex"
+uid="uid://5t3fyqany3nt"
+path="res://.godot/imported/BraveIcon.png-9d47841d30a609e28f3d67061f4706b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/67a68198b3c90_funny-silly-cats-pics.png"
-dest_files=["res://.godot/imported/67a68198b3c90_funny-silly-cats-pics.png-8cc3c3962c0452f4b3a20a703071ffa4.ctex"]
+source_file="res://assets/Dock/BraveIcon.png"
+dest_files=["res://.godot/imported/BraveIcon.png-9d47841d30a609e28f3d67061f4706b7.ctex"]
 
 [params]
 

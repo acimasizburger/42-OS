@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://tipkpnj40rl0"]
+
+[ext_resource type="PackedScene" uid="uid://dafpovwcn75ja" path="res://scenes/popupscenes/base_virus_pop_up.tscn" id="1_qfj5p"]
+[ext_resource type="Texture2D" uid="uid://x38frseagl11" path="res://assets/memallipopup.png" id="2_roiam"]
+
+[node name="MoneyVirusPopUp" unique_id=2098235997 instance=ExtResource("1_qfj5p")]
+mouse_filter = 1
+virus_resmi = ExtResource("2_roiam")
+
+[node name="VirusImage" parent="." index="2" unique_id=108537332]
+texture = ExtResource("2_roiam")

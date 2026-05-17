@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxx5pyxbwsmc7"
-path="res://.godot/imported/brave.png-189e651173bccd349a4a2acac55b3a84.ctex"
+uid="uid://x38frseagl11"
+path="res://.godot/imported/memallipopup.png-a7eba056ab91bcb6ca199935401665cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Apps/brave.png"
-dest_files=["res://.godot/imported/brave.png-189e651173bccd349a4a2acac55b3a84.ctex"]
+source_file="res://assets/memallipopup.png"
+dest_files=["res://.godot/imported/memallipopup.png-a7eba056ab91bcb6ca199935401665cc.ctex"]
 
 [params]
 

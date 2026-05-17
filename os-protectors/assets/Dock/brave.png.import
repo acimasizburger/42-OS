@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bolo6aal8t1k0"
-path="res://.godot/imported/open-folder.svg-2a0a4270235b30b92046f9428ca2f316.ctex"
+uid="uid://b1j53ttl4s32n"
+path="res://.godot/imported/brave.png-2983a41739493f2581b86ccb9ffd9a5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/open-folder.svg"
-dest_files=["res://.godot/imported/open-folder.svg-2a0a4270235b30b92046f9428ca2f316.ctex"]
+source_file="res://assets/Dock/brave.png"
+dest_files=["res://.godot/imported/brave.png-2983a41739493f2581b86ccb9ffd9a5f.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
