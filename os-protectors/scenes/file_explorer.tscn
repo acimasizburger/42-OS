@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://4sbc7l3uw6lb"]
 
 [ext_resource type="Texture2D" uid="uid://dqrh3hkxdn5n3" path="res://assets/Apps/file exp.png" id="1_ks2b6"]
-[ext_resource type="Script" uid="uid://cmvjld6rfst1u" path="res://scenes/file_explorer.gd" id="2_d5xdh"]
+[ext_resource type="Script" uid="uid://ob5oaska1ryk" path="res://scenes/file_explorer.gd" id="2_d5xdh"]
 [ext_resource type="Texture2D" uid="uid://b8junmddcx58a" path="res://assets/trash.png" id="3_6yoko"]
 [ext_resource type="FontFile" uid="uid://dmdkaf5mkhs5b" path="res://assets/minecraftia/Minecraftia-Regular.ttf" id="3_e1vx0"]
 
