@@ -1,25 +1,19 @@
 [gd_scene format=3 uid="uid://nyaxmbhlxy67"]
 
-[ext_resource type="Texture2D" uid="uid://bolo6aal8t1k0" path="res://assets/open-folder.svg" id="1_0fbet"]
 [ext_resource type="Texture2D" uid="uid://cbmdhgssfcpsb" path="res://assets/Background.png" id="1_am1vj"]
 [ext_resource type="Texture2D" uid="uid://l4dm8lbvx0x0" path="res://assets/Dock/Dock.png" id="2_g31lc"]
-[ext_resource type="FontFile" uid="uid://c4f2piurre6rl" path="res://assets/JetBrainsMonoNerdFontPropo-ExtraBold.ttf" id="2_iy58a"]
-[ext_resource type="Texture2D" uid="uid://bqn5ql1q34qrw" path="res://assets/Dock/file exp icon.png" id="3_knq72"]
-[ext_resource type="Texture2D" uid="uid://dsjeycsvhngg0" path="res://assets/visual-studio-code-logo.svg" id="5_kbped"]
+[ext_resource type="Texture2D" uid="uid://dgdbcmmovhqsl" path="res://assets/Dock/Vscode.png" id="4_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://cnivkj2qltoea" path="res://scenes/app_icons.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" path="res://scenes/cat_virus_pop_up.tscn" id="7_eh0v1"]
 [ext_resource type="PackedScene" uid="uid://dc5t4re66jk2i" path="res://scenes/vs_code.tscn" id="8_6a6wx"]
 [ext_resource type="Script" uid="uid://72eunsxucj0u" path="res://pop_up_spawner.gd" id="9_sky72"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g31lc"]
+content_margin_top = 2.0
+content_margin_bottom = 2.0
 texture = ExtResource("2_g31lc")
 texture_margin_left = 4.0
 texture_margin_right = 4.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fbet"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtu10"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Main" type="Control" unique_id=2128040512]
 layout_mode = 3
@@ -46,111 +40,31 @@ texture = ExtResource("1_am1vj")
 
 [node name="Dock" type="PanelContainer" parent="." unique_id=1931427154]
 layout_mode = 0
-offset_left = 118.0
-offset_top = 160.0
-offset_right = 212.0
+offset_left = 120.0
+offset_top = 154.0
+offset_right = 214.0
 offset_bottom = 176.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_g31lc")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Dock" unique_id=1858694613]
+[node name="Grid" type="HBoxContainer" parent="Dock" unique_id=1858694613]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+alignment = 1
 
-[node name="FileExplorerOnDock" type="Panel" parent="Dock" unique_id=1688855099]
+[node name="VSCode" parent="Dock/Grid" unique_id=1937944512 instance=ExtResource("6_tefeu")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0fbet")
-
-[node name="FileExplorerButton" type="Button" parent="Dock/FileExplorerOnDock" unique_id=1441210443]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -9.0
-offset_bottom = 9.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/icon_pressed_color = Color(0.4, 0.4, 0.4, 1)
-icon = ExtResource("3_knq72")
-flat = true
-
-[node name="FileExplorerOnDesktop" type="Panel" parent="." unique_id=1301678456]
-visible = false
-layout_mode = 0
-offset_left = 18.0
-offset_top = 16.0
-offset_right = 127.0
-offset_bottom = 137.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_qtu10")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="FileExplorerOnDesktop" unique_id=52707982]
-layout_mode = 1
-offset_right = 120.0
-offset_bottom = 134.0
-theme_override_constants/separation = -9
-
-[node name="FileExplorerButton" type="Button" parent="FileExplorerOnDesktop/VBoxContainer" unique_id=121201781]
-clip_contents = true
-custom_minimum_size = Vector2(120, 120)
-layout_mode = 2
-theme_override_colors/icon_pressed_color = Color(1, 0.43529412, 0.36078432, 1)
-theme_override_colors/icon_hover_color = Color(1, 0.36988518, 0.37280372, 0.78431374)
-theme_override_colors/icon_hover_pressed_color = Color(1, 0.4356126, 0.3591734, 1)
-icon = ExtResource("1_0fbet")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="Label" type="Label" parent="FileExplorerOnDesktop/VBoxContainer" unique_id=325958783]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_iy58a")
-text = "Dosya Gezgini"
-
-[node name="VSCode Icon" type="Panel" parent="." unique_id=570854799]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.016493056
-anchor_top = 0.25462964
-anchor_right = 0.11111111
-anchor_bottom = 0.44135803
-offset_left = 7.0
-offset_top = 9.999985
-offset_right = 7.0
-offset_bottom = 10.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_qtu10")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VSCode Icon" unique_id=329602137]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -67.0
-offset_right = 60.0
-offset_bottom = 67.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_constants/separation = 1
 
-[node name="VsCodeButton" type="Button" parent="VSCode Icon/VBoxContainer" unique_id=1956584394]
-clip_contents = true
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme_override_colors/icon_pressed_color = Color(1, 0.43529412, 0.36078432, 1)
-theme_override_colors/icon_hover_color = Color(1, 0.36988518, 0.37280372, 0.78431374)
-theme_override_colors/icon_hover_pressed_color = Color(1, 0.4356126, 0.3591734, 1)
-icon = ExtResource("5_kbped")
-flat = true
-icon_alignment = 1
-expand_icon = true
+[node name="Icon" parent="Dock/Grid/VSCode" index="0" unique_id=2139551096]
+texture_normal = ExtResource("4_o6xl0")
 
-[node name="Label" type="Label" parent="VSCode Icon/VBoxContainer" unique_id=1847842132]
-custom_minimum_size = Vector2(20, 20)
+[node name="Explorer" parent="Dock/Grid" unique_id=856997511 instance=ExtResource("6_tefeu")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_iy58a")
-text = "   Melocode"
+theme_override_constants/separation = 1
+
+[node name="Icon" parent="Dock/Grid/Explorer" index="0" unique_id=2139551096]
+texture_normal = ExtResource("4_o6xl0")
 
 [node name="CatVirusPopUp" parent="." unique_id=2098235997 instance=ExtResource("7_eh0v1")]
 layout_mode = 0
@@ -160,11 +74,13 @@ offset_right = 116.0
 offset_bottom = 70.0
 
 [node name="VSCode" parent="." unique_id=1229481715 instance=ExtResource("8_6a6wx")]
+visible = true
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 191.0
 offset_bottom = 116.0
+kod_havuzu = Array[String](["printf()", "ft_split()"])
 
 [node name="PopUpSpawner" type="Control" parent="." unique_id=1692848858]
 anchors_preset = 0
@@ -173,5 +89,10 @@ offset_bottom = 40.0
 script = ExtResource("9_sky72")
 
 [node name="Timer" type="Timer" parent="PopUpSpawner" unique_id=1647426441]
-wait_time = 2.0
+wait_time = 4.0
 autostart = true
+
+[connection signal="gui_input" from="Dock/Grid/VSCode" to="PopUpSpawner" method="_on_vs_code_gui_input"]
+
+[editable path="Dock/Grid/VSCode"]
+[editable path="Dock/Grid/Explorer"]

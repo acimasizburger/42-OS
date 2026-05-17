@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cnivkj2qltoea"]
+
+[ext_resource type="Theme" uid="uid://lv0m26ck1q5p" path="res://font_theme.tres" id="1_xsntk"]
+
+[node name="AppIcon" type="VBoxContainer" unique_id=1937944512]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 4
+
+[node name="Icon" type="TextureButton" parent="." unique_id=2139551096]
+layout_mode = 2
+
+[node name="AppName" type="Label" parent="." unique_id=1835586121]
+layout_mode = 2
+theme = ExtResource("1_xsntk")
+text = "Test"
+horizontal_alignment = 1

@@ -1,5 +1,7 @@
 extends Control
 
+
+
 # Kullanilacak dosyalarin adlarinin bulundugu yer
 @onready var code_input = %CodeInput
 @onready var terminal_label = $TerminalLabel
@@ -7,33 +9,30 @@ extends Control
 @onready var referance_label = $ReferanceLabel
 
 # Oyuncunun yazması gereken hedef kod
-var hedef_kod = "printf()"
+@export var kod_havuzu: Array[String] = []
 
 var is_dragging = false
 var drag_offset = Vector2()
 
 func _ready():
-	# Cikis butonunu gormek icin istenen kodu yazmamiz lazim
-	close_button.hide()
-	
-	# Istenen fonksiyon adini yaziyoruz ki yazacak olan gorup yazsin
-	referance_label.text = hedef_kod
+	randomize()
+
+# Inspector üzerinden istediğimiz kadar kod ekleyebiliriz
+	var rastgele_indeks = randi() % kod_havuzu.size()
+	referance_label.text = kod_havuzu[rastgele_indeks]
+
+	close_button.hide() # Doğru kodu yazana kadar hide kalacak
 	
 	# giris yazisi
 	terminal_label.text = "Terminal hazır. MeloCode'dan çıkmak için kodu hatasız derleyin."
 	terminal_label.modulate = Color(1, 1, 1) # beyaza boya
 
 func _on_close_button_pressed():
-	hide()
-	code_input.text = ""
-	close_button.hide()
-	terminal_label.text = "Terminal hazır."
-	terminal_label.modulate = Color(1, 1, 1)
-
-
-func _on_vs_code_button_pressed() -> void:
-	show() #aciyo iste ne bekliyon amminakeee
-
+	queue_free()
+	# code_input.text = ""
+	# close_button.hide()
+	# terminal_label.text = "Terminal hazır."
+	# terminal_label.modulate = Color(1, 1, 1)
 
 func _process(_delta):
 	if is_dragging:
@@ -42,7 +41,7 @@ func _process(_delta):
 
 func _on_submitt_button_pressed() -> void:
 	var yazilan_kod = code_input.text.strip_edges()
-	var beklenen_kod = hedef_kod.strip_edges()
+	var beklenen_kod = referance_label.text.strip_edges()
 	
 	if yazilan_kod == beklenen_kod:
 		terminal_label.text = "Başarılı: Kod derlendi! Çıkış yapabilirsiniz."
