@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cogook88nhsex"]
+
+[ext_resource type="Texture2D" uid="uid://3abw8o6258wn" path="res://assets/marketplace.png" id="1_dplui"]
+
+[node name="Marketplace" type="TextureRect" unique_id=1642604393]
+offset_right = 156.0
+offset_bottom = 97.0
+texture = ExtResource("1_dplui")
