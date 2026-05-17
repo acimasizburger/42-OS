@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="OsProtectors"
-run/main_scene="res://scenes/main.tscn"
+config/name="42 OS"
+config/description="Ortalama bir 42 öğrencisinin yaşadığı deneyim."
+config/version="v0.1j"
+run/main_scene="uid://cbkxfyhr67bfk"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://e1h72vwoqauf"
 
 [autoload]
 
@@ -24,7 +26,7 @@ SoundManager="*uid://pl16y4ijh3ye"
 
 window/size/viewport_width=320
 window/size/viewport_height=180
-window/size/mode=2
+window/size/mode=3
 window/size/borderless=true
 window/size/window_width_override=1920
 window/size/window_height_override=1080

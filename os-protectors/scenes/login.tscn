@@ -8,6 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://dt3ek8y2pxdlb" path="res://assets/Menu/Layer 3.png" id="6_wlyqo"]
 [ext_resource type="Texture2D" uid="uid://07cihi4yvc53" path="res://assets/github.png" id="7_bw5rt"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bw5rt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31byv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1u3ka"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbijj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_47vyr"]
@@ -43,6 +49,9 @@ offset_right = 67.0
 offset_bottom = 124.0
 theme_override_fonts/font = ExtResource("4_31byv")
 theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bw5rt")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_31byv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1u3ka")
 placeholder_text = "******"
 editable = false
 flat = true
@@ -74,7 +83,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_tbijj")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_47vyr")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ngwtj")
 placeholder_text = "login"
-editable = false
 flat = true
 
 [node name="Button" type="Button" parent="Password" unique_id=263885024]
