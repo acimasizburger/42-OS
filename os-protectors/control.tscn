@@ -1,0 +1,420 @@
+[gd_scene format=3 uid="uid://nyaxmbhlxy67"]
+
+[ext_resource type="Texture2D" uid="uid://bolo6aal8t1k0" path="res://assets/open-folder.svg" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://bbme078s74j5l" path="res://scripts/cat_virus_pop_up.gd" id="2_ee4bf"]
+[ext_resource type="FontFile" uid="uid://c4f2piurre6rl" path="res://assets/JetBrainsMonoNerdFontPropo-ExtraBold.ttf" id="2_iy58a"]
+[ext_resource type="Texture2D" uid="uid://c8orytil8o0a1" path="res://assets/cancel.svg" id="3_kbped"]
+[ext_resource type="Texture2D" uid="uid://blp71iyby4gpt" path="res://assets/67a68198b3c90_funny-silly-cats-pics.png" id="4_fj5cn"]
+[ext_resource type="Texture2D" uid="uid://dsjeycsvhngg0" path="res://assets/visual-studio-code-logo.svg" id="5_kbped"]
+[ext_resource type="Script" uid="uid://bpf2by5jky832" path="res://scripts/vs_code.gd" id="7_6a6wx"]
+[ext_resource type="Texture2D" uid="uid://digg7m0xn84hf" path="res://assets/confirmed.svg" id="8_6a6wx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e2m"]
+bg_color = Color(0, 0, 0, 0.59607846)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fbet"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtu10"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iy58a"]
+bg_color = Color(0.15847227, 0.15847233, 0.15847221, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6a6wx"]
+bg_color = Color(0.88594663, 0.33721104, 0.20403975, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sky72"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ytqx"]
+bg_color = Color(0.06331492, 0.06331492, 0.06331492, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxugv"]
+bg_color = Color(0.060530342, 0.060530365, 0.060530297, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh0v1"]
+bg_color = Color(0.021434633, 0.021434639, 0.021434614, 1)
+
+[node name="Control" type="Control" unique_id=2128040512]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=977871364]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = -320.0
+offset_right = 576.0
+offset_bottom = 328.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.33198708, 0, 0.106846936, 1)
+
+[node name="Dock" type="Panel" parent="." unique_id=1080692955]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -249.0
+offset_top = -79.0
+offset_right = 256.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_62e2m")
+
+[node name="FileExplorerOnDock" type="Panel" parent="Dock" unique_id=1688855099]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -38.5
+offset_right = -20.5
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0fbet")
+
+[node name="FileExplorerButton" type="Button" parent="Dock/FileExplorerOnDock" unique_id=1441210443]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -33.0
+offset_right = 29.5
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_pressed_color = Color(1, 0.43529412, 0.36078432, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.36988518, 0.37280372, 0.78431374)
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.4356126, 0.3591734, 1)
+icon = ExtResource("1_0fbet")
+flat = true
+expand_icon = true
+
+[node name="FileExplorerOnDesktop" type="Panel" parent="." unique_id=1301678456]
+visible = false
+layout_mode = 0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 127.0
+offset_bottom = 137.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qtu10")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FileExplorerOnDesktop" unique_id=52707982]
+layout_mode = 1
+offset_right = 120.0
+offset_bottom = 134.0
+theme_override_constants/separation = -9
+
+[node name="FileExplorerButton" type="Button" parent="FileExplorerOnDesktop/VBoxContainer" unique_id=121201781]
+clip_contents = true
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(1, 0.43529412, 0.36078432, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.36988518, 0.37280372, 0.78431374)
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.4356126, 0.3591734, 1)
+icon = ExtResource("1_0fbet")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="FileExplorerOnDesktop/VBoxContainer" unique_id=325958783]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iy58a")
+text = "Dosya Gezgini"
+
+[node name="VsCodeOnDesktop" type="Panel" parent="." unique_id=570854799]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016493056
+anchor_top = 0.25462964
+anchor_right = 0.11111111
+anchor_bottom = 0.44135803
+offset_left = 7.0
+offset_top = 9.999985
+offset_right = 7.0
+offset_bottom = 10.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qtu10")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VsCodeOnDesktop" unique_id=329602137]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -67.0
+offset_right = 60.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1
+
+[node name="VsCodeButton" type="Button" parent="VsCodeOnDesktop/VBoxContainer" unique_id=1956584394]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(1, 0.43529412, 0.36078432, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.36988518, 0.37280372, 0.78431374)
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.4356126, 0.3591734, 1)
+icon = ExtResource("5_kbped")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="VsCodeOnDesktop/VBoxContainer" unique_id=1847842132]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iy58a")
+text = "   Melocode"
+
+[node name="CatVirusPopUp" type="Panel" parent="." unique_id=1051678828]
+visible = false
+layout_mode = 0
+offset_left = 717.0
+offset_top = 96.0
+offset_right = 1078.0
+offset_bottom = 376.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_iy58a")
+script = ExtResource("2_ee4bf")
+
+[node name="VirusUpBar" type="Panel" parent="CatVirusPopUp" unique_id=1252805643]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 28.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6a6wx")
+
+[node name="VirusCloseBar" type="Panel" parent="CatVirusPopUp" unique_id=2003293757]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_bottom = 27.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sky72")
+
+[node name="QuitButton" type="Button" parent="CatVirusPopUp/VirusCloseBar" unique_id=1492668273]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(0.8352941, 0.08627451, 0.101960786, 1)
+icon = ExtResource("3_kbped")
+flat = true
+expand_icon = true
+
+[node name="CatPhoto" type="TextureRect" parent="CatVirusPopUp" unique_id=488908012]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 31.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("4_fj5cn")
+expand_mode = 1
+
+[node name="FakeFileName" type="Label" parent="CatVirusPopUp" unique_id=1052780228]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = -3.0
+offset_bottom = 27.0
+grow_horizontal = 2
+text = "BanaMamaVer.dat"
+
+[node name="VsCode" type="Panel" parent="." unique_id=22468748]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 65.0
+offset_right = 858.0
+offset_bottom = 601.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ytqx")
+script = ExtResource("7_6a6wx")
+
+[node name="CodeInput" type="CodeEdit" parent="VsCode" unique_id=1800633269]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 164.0
+offset_top = 56.0
+offset_right = -19.0
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Beni Yaz"
+
+[node name="VsCodeUpBar" type="Panel" parent="VsCode" unique_id=1214193859]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 36.0
+grow_horizontal = 2
+
+[node name="VsCodeName" type="Label" parent="VsCode/VsCodeUpBar" unique_id=1485262952]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MeloCode"
+
+[node name="CloseButton" type="Button" parent="VsCode/VsCodeUpBar" unique_id=1952239016]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 623.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(0.8352941, 0.08627451, 0.101960786, 1)
+icon = ExtResource("3_kbped")
+flat = true
+expand_icon = true
+
+[node name="VsCodeFileExplorer" type="Panel" parent="VsCode" unique_id=1236511700]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 54.0
+offset_right = -501.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pxugv")
+
+[node name="FETop" type="Label" parent="VsCode/VsCodeFileExplorer" unique_id=1786360468]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "C dosyalari"
+
+[node name="ReferanceLabel" type="Label" parent="VsCode/VsCodeFileExplorer" unique_id=728938417]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 46.0
+offset_right = -107.0
+offset_bottom = -397.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CosmeticPart1" type="Label" parent="VsCode/VsCodeFileExplorer/ReferanceLabel" unique_id=803366218]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -12.5
+offset_right = 22.0
+offset_bottom = 9.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = ".c"
+
+[node name="Terminal" type="Panel" parent="VsCode" unique_id=450012257]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 164.0
+offset_top = -130.0
+offset_right = -16.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_eh0v1")
+
+[node name="TerminalLabel" type="Label" parent="VsCode/Terminal" unique_id=748770043]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 12
+
+[node name="SubmitButton" type="Button" parent="VsCode/Terminal" unique_id=1864196041]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.90200007
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.15603638
+offset_top = -51.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/icon_normal_color = Color(0.101960786, 0.8117647, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0.7863713, 0.25052497, 1)
+theme_override_colors/icon_pressed_color = Color(0.29411766, 0.7490196, 0.23529412, 1)
+theme_override_colors/icon_hover_color = Color(0.51890445, 0.7304711, 0, 1)
+icon = ExtResource("8_6a6wx")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="VsCodeOnDesktop/VBoxContainer/VsCodeButton" to="VsCode" method="_on_vs_code_button_pressed"]
+[connection signal="gui_input" from="CatVirusPopUp/VirusUpBar" to="CatVirusPopUp" method="_on_virus_up_bar_gui_input"]
+[connection signal="pressed" from="CatVirusPopUp/VirusCloseBar/QuitButton" to="CatVirusPopUp" method="_on_quit_button_pressed"]
+[connection signal="gui_input" from="CatVirusPopUp/CatPhoto" to="CatVirusPopUp" method="_on_cat_photo_gui_input"]
+[connection signal="gui_input" from="VsCode/VsCodeUpBar" to="VsCode" method="_on_vs_code_up_bar_gui_input"]
+[connection signal="pressed" from="VsCode/VsCodeUpBar/CloseButton" to="VsCode" method="_on_close_button_pressed"]
+[connection signal="pressed" from="VsCode/Terminal/SubmitButton" to="VsCode" method="_on_submit_button_pressed"]
