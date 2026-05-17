@@ -15,22 +15,22 @@ font_size = 6
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_knq72"]
 
 [node name="VSCode" type="TextureRect" unique_id=1229481715]
-visible = false
 offset_left = 16.0
 offset_top = 13.0
 offset_right = 207.0
 offset_bottom = 129.0
 texture = ExtResource("1_o5h1s")
 script = ExtResource("2_mgo35")
+kod_havuzu = Array[String](["ft_printf()", "ft_split()", "int main(void)"])
 
 [node name="VsCodeName" type="Label" parent="." unique_id=738499809]
 texture_filter = 1
 layout_mode = 0
-offset_left = 17.0
+offset_left = 21.0
 offset_top = 1.0
-offset_right = 51.0
+offset_right = 49.0
 offset_bottom = 12.0
-text = "MeloCode"
+text = "VSCode"
 label_settings = SubResource("LabelSettings_pxugv")
 
 [node name="CodeInput" type="CodeEdit" parent="." unique_id=554256049]
@@ -45,7 +45,6 @@ theme_override_fonts/font = ExtResource("3_syb4e")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_g31lc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_knq72")
 placeholder_text = "Beni yaz"
-delimiter_strings = Array[String](["\" \"", "' '"])
 
 [node name="CloseButton" type="Button" parent="." unique_id=670577285]
 unique_name_in_owner = true
@@ -69,9 +68,9 @@ autowrap_mode = 2
 [node name="ReferanceLabel" type="Label" parent="." unique_id=1196253335]
 layout_mode = 0
 offset_left = 20.0
-offset_top = 15.0
-offset_right = 53.0
-offset_bottom = 26.0
+offset_top = 14.0
+offset_right = 52.0
+offset_bottom = 107.0
 theme = ExtResource("4_6eo8q")
 text = "a"
 

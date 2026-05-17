@@ -1,7 +1,5 @@
 extends Control
 
-
-
 # Kullanilacak dosyalarin adlarinin bulundugu yer
 @onready var code_input = %CodeInput
 @onready var terminal_label = $TerminalLabel
@@ -17,15 +15,21 @@ var drag_offset = Vector2()
 func _ready():
 	randomize()
 
-# Inspector üzerinden istediğimiz kadar kod ekleyebiliriz
-	var rastgele_indeks = randi() % kod_havuzu.size()
-	referance_label.text = kod_havuzu[rastgele_indeks]
+func paneli_kur():
+	
+	if kod_havuzu.size() > 0:
+		var rastgele_indeks = randi() % kod_havuzu.size()
+		referance_label.text = kod_havuzu[rastgele_indeks]
+	else:
+		# Eğer hâlâ boşsa test için varsayılan bir değer atayalım
+		referance_label.text = "printf()" 
+		print("Liste şu an boş, varsayılan değer atandı!")
 
-	close_button.hide() # Doğru kodu yazana kadar hide kalacak
+	close_button.hide() 
 	
 	# giris yazisi
-	terminal_label.text = "Terminal hazır. MeloCode'dan çıkmak için kodu hatasız derleyin."
-	terminal_label.modulate = Color(1, 1, 1) # beyaza boya
+	terminal_label.text = "Terminal hazır. VSCode'dan çıkmak için kodu hatasız derleyin."
+	terminal_label.modulate = Color(1, 1, 1)
 
 func _on_close_button_pressed():
 	queue_free()
@@ -50,7 +54,6 @@ func _on_submitt_button_pressed() -> void:
 	else:
 		terminal_label.text = "Başarısız: Kodu birebir aynı yazamadınız. Lütfen tekrar deneyin."
 		terminal_label.modulate = Color(1, 0, 0)
-
 
 func _on_gui_input(event: InputEvent) -> void:
 	# sol fare tusunu kontrol et
