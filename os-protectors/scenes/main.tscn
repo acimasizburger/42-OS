@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://tipkpnj40rl0" path="res://scenes/popupscenes/money_virus_pop_up.tscn" id="11_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://dt3ek8y2pxdlb" path="res://assets/Menu/Layer 3.png" id="12_trceg"]
 [ext_resource type="Theme" uid="uid://lv0m26ck1q5p" path="res://font_theme.tres" id="13_a8y0u"]
+[ext_resource type="FontFile" uid="uid://dmdkaf5mkhs5b" path="res://assets/minecraftia/Minecraftia-Regular.ttf" id="13_trceg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eb6dy"]
 texture = ExtResource("12_trceg")
@@ -177,11 +178,14 @@ theme_override_font_sizes/font_size = 12
 text = "SKOR
      0"
 
+<<<<<<< Updated upstream
 [connection signal="pressed" from="Dock/Grid/VSCode" to="PopUpSpawner" method="_on_vscode_pressed"]
 [connection signal="pressed" from="Dock/Grid/Explorer" to="PopUpSpawner" method="_on_explorer_pressed"]
 
 [editable path="Dock/Grid/VSCode"]
 [editable path="Dock/Grid/Explorer"]
+=======
+>>>>>>> Stashed changes
 [connection signal="pressed" from="Dock/Grid/VSCode" to="PopUpSpawner" method="_on_vscode_pressed"]
 [connection signal="pressed" from="Dock/Grid/File Explorer" to="PopUpSpawner" method="_on_explorer_pressed"]
 [connection signal="pressed" from="Dock/Grid/Brave" to="PopUpSpawner" method="_on_brave_pressed"]
