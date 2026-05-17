@@ -1,11 +1,149 @@
 [gd_scene format=3 uid="uid://4sbc7l3uw6lb"]
 
 [ext_resource type="Texture2D" uid="uid://dqrh3hkxdn5n3" path="res://assets/Apps/file exp.png" id="1_ks2b6"]
+[ext_resource type="Script" uid="uid://cmvjld6rfst1u" path="res://scenes/file_explorer.gd" id="2_d5xdh"]
+[ext_resource type="Texture2D" uid="uid://b8junmddcx58a" path="res://assets/trash.png" id="3_6yoko"]
+[ext_resource type="FontFile" uid="uid://dmdkaf5mkhs5b" path="res://assets/minecraftia/Minecraftia-Regular.ttf" id="3_e1vx0"]
 
 [node name="File Explorer" type="TextureRect" unique_id=154662068]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = 34.0
+offset_right = -109.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ks2b6")
+script = ExtResource("2_d5xdh")
+
+[node name="UpBar" type="Control" parent="." unique_id=1246215915]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_right = -11.0
+offset_bottom = 10.0
+grow_horizontal = 2
+
+[node name="CloseButton" type="Button" parent="." unique_id=618962371]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -10.0
+offset_top = 1.0
+offset_bottom = 11.0
+grow_horizontal = 0
+flat = true
+
+[node name="ItemList" type="ItemList" parent="." unique_id=1202201986]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 19.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_e1vx0")
+theme_override_font_sizes/font_size = 4
+
+[node name="TrashButton" type="TextureButton" parent="." unique_id=1824566708]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -12.0
+offset_right = -5.0
+offset_bottom = -3.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("3_6yoko")
+
+[node name="DocumentsButton" type="Button" parent="." unique_id=1741685256]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 35.0
+offset_right = 42.0
+offset_bottom = 43.0
+flat = true
+
+[node name="MusicButton" type="Button" parent="." unique_id=26936670]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 51.0
+offset_right = 42.0
+offset_bottom = 59.0
+flat = true
+
+[node name="PicturesButton" type="Button" parent="." unique_id=261534430]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 59.0
+offset_right = 42.0
+offset_bottom = 67.0
+flat = true
+
+[node name="DownloadsButton" type="Button" parent="." unique_id=1872253683]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 43.0
+offset_right = 42.0
+offset_bottom = 51.0
+flat = true
+
+[node name="HomeButton" type="Button" parent="." unique_id=734057551]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 28.0
+offset_right = 41.0
+offset_bottom = 36.0
+flat = true
+
+[node name="StarredButton" type="Button" parent="." unique_id=2126262174]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 20.0
+offset_right = 41.0
+offset_bottom = 28.0
+flat = true
+
+[node name="PercentButton" type="Button" parent="." unique_id=43247496]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 12.0
+offset_right = 41.0
+offset_bottom = 20.0
+flat = true
+
+[node name="StatusLabel" type="Label" parent="." unique_id=2055441759]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 43.0
+offset_top = -36.5
+offset_right = -46.0
+offset_bottom = -29.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_e1vx0")
+theme_override_font_sizes/font_size = 4
+
+[connection signal="gui_input" from="UpBar" to="." method="_on_up_bar_gui_input"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="TrashButton" to="." method="_on_trash_button_pressed"]
+[connection signal="pressed" from="DocumentsButton" to="." method="_on_documents_button_pressed"]
+[connection signal="pressed" from="MusicButton" to="." method="_on_music_button_pressed"]
+[connection signal="pressed" from="PicturesButton" to="." method="_on_pictures_button_pressed"]
+[connection signal="pressed" from="DownloadsButton" to="." method="_on_downloads_button_pressed"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="StarredButton" to="." method="_on_starred_button_pressed"]
+[connection signal="pressed" from="PercentButton" to="." method="_on_percent_button_pressed"]

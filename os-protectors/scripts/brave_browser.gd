@@ -45,7 +45,7 @@ func _on_brave_up_bar_gui_input(event):
 
 # Sağ üstteki çarpıya basınca pencereyi kapatır (gizler)
 func _on_close_button_pressed():
-	hide()
+	queue_free()
 
 # ==========================================
 # --- EVO MİNİ OYUN MEKANİKLERİ ---
