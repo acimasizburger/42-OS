@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cc0v0i45qhj1v"]
 
 [ext_resource type="Texture2D" uid="uid://cxx5pyxbwsmc7" path="res://assets/Apps/BraveWeb.png" id="1_667o6"]
-[ext_resource type="Script" uid="uid://dsks3np7ato1a" path="res://scenes/brave_browser.gd" id="2_lx22g"]
+[ext_resource type="Script" uid="uid://dsks3np7ato1a" path="res://scripts/brave_browser.gd" id="2_lx22g"]
 [ext_resource type="Texture2D" uid="uid://dfkw1c53x103r" path="res://assets/Dock/evo.png" id="3_gnu25"]
 [ext_resource type="Texture2D" uid="uid://cgjytpma27igi" path="res://assets/Dock/a.png" id="4_nr16f"]
 

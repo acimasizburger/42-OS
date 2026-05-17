@@ -1,6 +1,9 @@
 extends Control
 
 const VSCODE = preload("res://scenes/vs_code.tscn")
+const BRAVE = preload("res://scenes/brave_browser.tscn")
+const EXPLORER = preload("res://scenes/file_explorer.tscn")
+const MARKET = preload("res://scenes/marketplace.tscn")
 
 # DİKKAT: Artık tek bir "POPUP_SCENE" yok. Onun yerine dışarıdan 
 # birden fazla sahne ekleyebileceğimiz bir liste (Array) var!
@@ -55,3 +58,33 @@ func _on_vscode_pressed() -> void:
 
 	if new_vscode.has_method("paneli_kur"):
 		new_vscode.paneli_kur()
+
+func _on_brave_pressed() -> void:
+	var new_brave = BRAVE.instantiate()
+
+	add_child(new_brave)
+	var vscode_size = new_brave.size
+	
+	var random_x = randf_range(0, SCREEN_WIDTH - vscode_size.x)
+	var random_y = randf_range(0, SCREEN_HEIGHT - vscode_size.y)
+	new_brave.position = Vector2(random_x, random_y)
+
+func _on_explorer_pressed() -> void:
+	var new_exp = EXPLORER.instantiate()
+
+	add_child(new_exp)
+	var vscode_size = new_exp.size
+	
+	var random_x = randf_range(0, SCREEN_WIDTH - vscode_size.x)
+	var random_y = randf_range(0, SCREEN_HEIGHT - vscode_size.y)
+	new_exp.position = Vector2(random_x, random_y)
+
+func _on_market_pressed() -> void:
+	var new_market = MARKET.instantiate()
+
+	add_child(new_market)
+	var vscode_size = new_market.size
+	
+	var random_x = randf_range(0, SCREEN_WIDTH - vscode_size.x)
+	var random_y = randf_range(0, SCREEN_HEIGHT - vscode_size.y)
+	new_market.position = Vector2(random_x, random_y)

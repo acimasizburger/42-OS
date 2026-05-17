@@ -1,11 +1,11 @@
 extends Node
 
 signal görev_degisti(yeni_görev_metni)
-
+var total_time = 0
 var gorev_havuzu = [
-	{"id": "vscode_yazilim", "taslak_metin": "MeloCode'a gir ve istenen C kodunu hatasız derle."},
-	{"id": "brave_evo", "taslak_metin": "Brave tarayıcısını aç ve EVO ayarını seç."},
-	{"id": "virus_sil", "taslak_metin": "Ekrana basılan virüs pop-up'larını temizle!"}
+	{"id": "vscode_yazilim", "taslak_metin": "VSCode'a gir ve istenen C kodunu hatasız derle."},
+	{"id": "brave_evo", "taslak_metin": "Brave tarayıcısını aç ve EVO slotu seç."},
+	{"id": "dosya_temizle", "taslak_metin": "Dosya Yöneticisindeki çöpleri sil"}
 ]
 
 var toplam_gorev_sayisi = 1
@@ -37,6 +37,7 @@ func gorevi_tamamla(görev_id: String):
 	if görev_id == su_anki_görev_id:
 		print("Başarılı: Görev ", toplam_gorev_sayisi, " tamamlandı.")
 		toplam_gorev_sayisi += 1
+		
 		yeni_rastgele_görev_uret()
 	else:
 		print("Yanlış görev tamamlanmaya çalışıldı. Beklenen: ", su_anki_görev_id)
