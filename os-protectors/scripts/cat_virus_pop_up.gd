@@ -24,7 +24,7 @@ func _on_cat_photo_gui_input(event):
 
 
 # --- 1. SÜRÜKLEME İŞLEMİ (Her karede konumu günceller) ---
-func _process(delta):
+func _process(_delta):
 	if is_dragging:
 		# Farenin anlık konumundan, tıkladığımız noktanın farkını çıkararak paneli taşıyoruz
 		global_position = get_global_mouse_position() - drag_offset

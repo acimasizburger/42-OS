@@ -1,13 +1,16 @@
 extends Control
 
 # Kullanilacak dosyalarin adlarinin bulundugu yer
-@onready var code_input = $CodeInput
-@onready var terminal_label = $Terminal/TerminalLabel
-@onready var close_button = $VsCodeUpBar/CloseButton
-@onready var referance_label = $VsCodeFileExplorer/ReferanceLabel
+@onready var code_input = %CodeInput
+@onready var terminal_label = $TerminalLabel
+@onready var close_button = %CloseButton
+@onready var referance_label = $ReferanceLabel
 
 # Oyuncunun yazması gereken hedef kod
 var hedef_kod = "printf()"
+
+var is_dragging = false
+var drag_offset = Vector2()
 
 func _ready():
 	# Cikis butonunu gormek icin istenen kodu yazmamiz lazim
@@ -20,18 +23,6 @@ func _ready():
 	terminal_label.text = "Terminal hazır. MeloCode'dan çıkmak için kodu hatasız derleyin."
 	terminal_label.modulate = Color(1, 1, 1) # beyaza boya
 
-func _on_submit_button_pressed():
-	var yazilan_kod = code_input.text.strip_edges()
-	var beklenen_kod = hedef_kod.strip_edges()
-	
-	if yazilan_kod == beklenen_kod:
-		terminal_label.text = "Başarılı: Kod derlendi! Çıkış yapabilirsiniz."
-		terminal_label.modulate = Color(0, 1, 0) 
-		close_button.show()
-	else:
-		terminal_label.text = "Başarısız: Kodu birebir aynı yazamadınız. Lütfen tekrar deneyin."
-		terminal_label.modulate = Color(1, 0, 0)
-
 func _on_close_button_pressed():
 	hide()
 	code_input.text = ""
@@ -43,15 +34,26 @@ func _on_close_button_pressed():
 func _on_vs_code_button_pressed() -> void:
 	show() #aciyo iste ne bekliyon amminakeee
 
-var is_dragging = false
-var drag_offset = Vector2()
 
-func _process(delta):
+func _process(_delta):
 	if is_dragging:
 		# farenin anlik konumu - tikladigimiz konum
 		global_position = get_global_mouse_position() - drag_offset
 
-func _on_vs_code_up_bar_gui_input(event):
+func _on_submitt_button_pressed() -> void:
+	var yazilan_kod = code_input.text.strip_edges()
+	var beklenen_kod = hedef_kod.strip_edges()
+	
+	if yazilan_kod == beklenen_kod:
+		terminal_label.text = "Başarılı: Kod derlendi! Çıkış yapabilirsiniz."
+		terminal_label.modulate = Color(0, 1, 0) 
+		close_button.show()
+	else:
+		terminal_label.text = "Başarısız: Kodu birebir aynı yazamadınız. Lütfen tekrar deneyin."
+		terminal_label.modulate = Color(1, 0, 0)
+
+
+func _on_gui_input(event: InputEvent) -> void:
 	# sol fare tusunu kontrol et
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
