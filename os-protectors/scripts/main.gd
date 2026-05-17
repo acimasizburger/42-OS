@@ -36,7 +36,7 @@ func _process(delta):
 	sure_arayuzunu_guncelle()
 
 func sure_arayuzunu_guncelle():
-	timer_label.text = "SÜRE: " + str(ceil(kalan_sure))
+	timer_label.text = str(ceil(kalan_sure))
 
 # GÖREV BİTTİĞİNDE ÇALIŞAN FONKSİYON
 func _on_görev_degisti(yeni_metin: String):
