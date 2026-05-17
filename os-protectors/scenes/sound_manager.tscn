@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bi1aungvfugb7" path="res://scripts/sound_manager.gd" id="1_s6peo"]
 [ext_resource type="AudioStream" uid="uid://gba60dbq51hl" path="res://assets/click.mp3" id="2_shlr6"]
-[ext_resource type="AudioStream" uid="uid://c2nit5l1fi0yi" path="res://assets/key.mp3" id="3_shlr6"]
+[ext_resource type="AudioStream" uid="uid://biu4sdse53801" path="res://assets/mixkit-hard-single-key-press-in-a-laptop-2542.mp3" id="3_shlr6"]
 
 [node name="SoundManager" type="Node" unique_id=1517851002]
 script = ExtResource("1_s6peo")
