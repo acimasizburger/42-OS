@@ -122,6 +122,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="Timer" type="Timer" parent="." unique_id=358433787]
+autostart = true
+
 [connection signal="pressed" from="Dock/Grid/VSCode" to="PopUpSpawner" method="_on_vscode_pressed"]
 [connection signal="pressed" from="Dock/Grid/File Explorer" to="PopUpSpawner" method="_on_explorer_pressed"]
 [connection signal="pressed" from="Dock/Grid/Brave" to="PopUpSpawner" method="_on_brave_pressed"]
