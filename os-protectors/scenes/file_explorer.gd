@@ -31,24 +31,24 @@ var orijinal_dosyalar = {
 		{"ad": "sistem_hack.exe", "virus_mu": true} # Virüs
 	],
 	"Downloads": [
+		{"ad": "leagueoflegends.dat", "virus_mu": true}, # Senin şüpheli dosyan
 		{"ad": "godot.exe", "virus_mu": false},
-		{"ad": "unrealengine.exe", "virus_mu": false},
-		{"ad": "leagueoflegends.dat", "virus_mu": true} # Senin şüpheli dosyan
+		{"ad": "unrealengine.exe", "virus_mu": false}
 	],
 	"Home": [
-		{"ad": "klasik_muzik.mp3", "virus_mu": false},
+		{"ad": "Test.file", "virus_mu": false},
 		{"ad": "jenerik.wav", "virus_mu": false},
-		{"ad": "veryrealsong.mp3", "virus_mu": true} # Senin şüpheli dosyan
+		{"ad": "importantfileDONTDELETE.dll", "virus_mu": true} # Senin şüpheli dosyan
 	],
 	"Starred": [
-		{"ad": "klasik_muzik.mp3", "virus_mu": false},
-		{"ad": "jenerik.wav", "virus_mu": false},
-		{"ad": "veryrealsong.mp3", "virus_mu": true} # Senin şüpheli dosyan
+		{"ad": "memalli.usr", "virus_mu": false},
+		{"ad": "memallisrs.usr2", "virus_mu": true}, # Senin şüpheli dosyan
+		{"ad": "alpturan.usr", "virus_mu": false}
 	],
 	"Percent": [
-		{"ad": "klasik_muzik.mp3", "virus_mu": false},
-		{"ad": "jenerik.wav", "virus_mu": false},
-		{"ad": "veryrealsong.mp3", "virus_mu": true} # Senin şüpheli dosyan
+		{"ad": "42OS.exe", "virus_mu": false},
+		{"ad": "Aseprite.exe", "virus_mu": false},
+		{"ad": "314qiakft.bat", "virus_mu": true} # Senin şüpheli dosyan
 	],
 }
 
@@ -123,7 +123,7 @@ func _on_trash_button_pressed():
 	
 	if secilen_dosya["virus_mu"] == true:
 		# BAŞARILI SİLİŞ!
-		status_label.text = "BAŞARILI: " + secilen_dosya["ad"] + " silindi!"
+		status_label.text = secilen_dosya["ad"] + " silindi!"
 		status_label.modulate = Color(0, 1, 0) # Yeşil renk
 		
 		guncel_dosyalar[acik_olan_klasor].remove_at(secilen_index)
@@ -131,7 +131,7 @@ func _on_trash_button_pressed():
 		oyunu_kontrol_et()
 	else:
 		# YANLIŞ SİLİŞ!
-		status_label.text = "KRİTİK HATA: Masum dosya silindi! Sistem sıfırlanıyor..."
+		status_label.text = "Masum dosya silindi!"
 		status_label.modulate = Color(1, 0, 0) # Kırmızı renk
 		sistemi_sifirla()
 
@@ -148,7 +148,7 @@ func oyunu_kontrol_et():
 		# VİRÜSLERİN HEPSİ TEMİZLENDİ!
 		item_list.clear()
 		item_list.add_item("SİSTEM TEMİZ!")
-		status_label.text = "GÖREV BAŞARILI! Sistem güvene alındı."
+		status_label.text = "Sistem güvene alındı."
 		status_label.modulate = Color(0, 1, 0)
 		
 		# --- GÖREV YÖNETİCİSİNİ TETİKLİYORUZ ---

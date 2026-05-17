@@ -1,14 +1,81 @@
-extends Node # (Godot varsayılan olarak Node2D veya Control verdiyse en üst satırı ona göre bırakabilirsin)
+extends Node
 
 @onready var gorev_label = $TaskGiver/GorevLabel
+@onready var timer_label = $TimerLabel
+@onready var game_over_label = $GameOverLabel
+@onready var score_label = $ScoreLabel # YENİ EKLENEN SKOR YAZISI
+
+# Zamanlayıcı Değişkenleri
+var kalan_sure: float = 30.0
+var oyun_bitti: bool = false
+
+# Skor Değişkenleri
+var toplam_skor: int = 0
+var gorev_baslangic_zamani: int = 0 # Görevin başladığı anki gerçek zaman
 
 func _ready():
-	# Global TaskManager'dan gelen görev değişim sinyalini buraya bağlıyoruz
+	game_over_label.hide()
 	TaskManager.görev_degisti.connect(_on_görev_degisti)
-	
-	# Oyun ilk açıldığında o anki görevi ekrana yazdırıyoruz
 	gorev_label.text = TaskManager.su_anki_gorevi_al()
+	sure_arayuzunu_guncelle()
+	
+	# Oyun başlar başlamaz ilk görevin kronometresini başlat
+	gorev_baslangic_zamani = Time.get_ticks_msec()
+	score_label.text = "SKOR\n    0"
 
+func _process(delta):
+	if oyun_bitti:
+		return
+		
+	kalan_sure -= delta
+	
+	if kalan_sure <= 0:
+		kalan_sure = 0
+		oyun_over()
+		
+	sure_arayuzunu_guncelle()
+
+func sure_arayuzunu_guncelle():
+	timer_label.text = str(ceil(kalan_sure))
+
+# GÖREV BİTTİĞİNDE ÇALIŞAN FONKSİYON
 func _on_görev_degisti(yeni_metin: String):
-	# Görev değiştikçe ekrandaki yazı otomatik olarak güncellenecek
 	gorev_label.text = yeni_metin
+	
+	if TaskManager.toplam_gorev_sayisi > 1:
+		# --- 1. ZAMAN HESAPLAMASI ---
+		var su_an = Time.get_ticks_msec()
+		# Aradan geçen zamanı saniyeye çeviriyoruz (Örn: 3.5 saniye)
+		var harcanan_saniye = (su_an - gorev_baslangic_zamani) / 1000.0 
+		
+		# --- 2. SKOR HESAPLAMASI ---
+		# Eğer oyuncu 2 saniye veya altında yaparsa: 200 Puan
+		# Eğer 10 saniye veya üzerinde yaparsa: 100 Puan
+		# Arasındaysa, hıza göre orantılı bir puan alır.
+		var kazanilan_puan = int(clamp(remap(harcanan_saniye, 2.0, 10.0, 200.0, 100.0), 100.0, 200.0))
+		
+		toplam_skor += kazanilan_puan
+		score_label.text = "SKOR\n    " + str(toplam_skor)
+		
+		# Bir sonraki görev için kronometreyi anında sıfırla
+		gorev_baslangic_zamani = su_an
+		
+		# --- 3. SÜRE ÖDÜLÜ VE EFEKTLER ---
+		kalan_sure += 5.5
+		
+		# Skorun ve Sürenin aynı anda yeşil yanıp sönme efekti
+		timer_label.modulate = Color(0, 1, 0)
+		score_label.modulate = Color(0, 1, 0) 
+		await get_tree().create_timer(0.2).timeout
+		if not oyun_bitti:
+			timer_label.modulate = Color(1, 1, 1)
+			score_label.modulate = Color(1, 1, 1)
+
+func oyun_over():
+	oyun_bitti = true
+	timer_label.text = "SİSTEM ÇÖKTÜ"
+	timer_label.modulate = Color(1, 0, 0)
+	game_over_label.show()
+	
+	# İstersen oyun bitince final skorunu büyük yazının altına da yazdırabilirsin
+	# game_over_label.text = "OYUN BİTTİ\nFİNAL SKOR: " + str(toplam_skor)
