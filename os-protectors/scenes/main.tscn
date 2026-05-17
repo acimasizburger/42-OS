@@ -179,11 +179,14 @@ text = "SKOR
      0"
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [connection signal="pressed" from="Dock/Grid/VSCode" to="PopUpSpawner" method="_on_vscode_pressed"]
 [connection signal="pressed" from="Dock/Grid/Explorer" to="PopUpSpawner" method="_on_explorer_pressed"]
 
 [editable path="Dock/Grid/VSCode"]
 [editable path="Dock/Grid/Explorer"]
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 [connection signal="pressed" from="Dock/Grid/VSCode" to="PopUpSpawner" method="_on_vscode_pressed"]
