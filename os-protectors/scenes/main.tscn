@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bqn5ql1q34qrw" path="res://assets/Dock/file exp icon.png" id="4_tefeu"]
 [ext_resource type="Texture2D" uid="uid://5t3fyqany3nt" path="res://assets/Dock/BraveIcon.png" id="5_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://ddh3brtwdkjjq" path="res://assets/Dock/All.png" id="6_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://dyvfhg4cbkr5d" path="res://scenes/popupscenes/cat_virus_pop_up.tscn" id="7_eh0v1"]
-[ext_resource type="PackedScene" uid="uid://tipkpnj40rl0" path="res://scenes/popupscenes/money_virus_pop_up.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://dyvfhg4cbkr5d" path="res://scenes/popupscenes/cat_virus_pop_up.tscn" id="9_85g3d"]
 [ext_resource type="Script" uid="uid://72eunsxucj0u" path="res://scripts/pop_up_spawner.gd" id="9_sky72"]
+[ext_resource type="PackedScene" uid="uid://tipkpnj40rl0" path="res://scenes/popupscenes/money_virus_pop_up.tscn" id="11_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://dt3ek8y2pxdlb" path="res://assets/Menu/Layer 3.png" id="12_trceg"]
 [ext_resource type="Theme" uid="uid://lv0m26ck1q5p" path="res://font_theme.tres" id="13_a8y0u"]
 
@@ -99,7 +99,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("9_sky72")
-virus_sahneleri = Array[PackedScene]([ExtResource("7_eh0v1"), ExtResource("9_85g3d")])
+virus_sahneleri = Array[PackedScene]([ExtResource("9_85g3d"), ExtResource("11_eb6dy")])
 
 [node name="Timer" type="Timer" parent="PopUpSpawner" unique_id=1647426441]
 wait_time = 4.0
