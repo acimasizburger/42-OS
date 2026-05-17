@@ -31,10 +31,6 @@ func paneli_kur():
 
 func _on_close_button_pressed():
 	queue_free()
-	# code_input.text = ""
-	# close_button.hide()
-	# terminal_label.text = "Terminal hazır."
-	# terminal_label.modulate = Color(1, 1, 1)
 
 func _process(_delta):
 	if is_dragging:

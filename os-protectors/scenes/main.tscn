@@ -1,24 +1,17 @@
 [gd_scene format=3 uid="uid://nyaxmbhlxy67"]
 
-[ext_resource type="Texture2D" uid="uid://cbmdhgssfcpsb" path="res://assets/Background.png" id="1_am1vj"]
+[ext_resource type="Texture2D" uid="uid://ckn67estwubme" path="res://assets/Menu/Background.png" id="1_tefeu"]
 [ext_resource type="Script" uid="uid://cd54d3gpa7d52" path="res://scenes/main.gd" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://l4dm8lbvx0x0" path="res://assets/Dock/Dock.png" id="2_g31lc"]
 [ext_resource type="Texture2D" uid="uid://dgdbcmmovhqsl" path="res://assets/Dock/Vscode.png" id="4_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://cnivkj2qltoea" path="res://scenes/app_icons.tscn" id="6_tefeu"]
-[ext_resource type="Texture2D" uid="uid://b0haln6tc62w0" path="res://assets/pop ups/pop up 1.png" id="6_tipki"]
+[ext_resource type="Texture2D" uid="uid://bqn5ql1q34qrw" path="res://assets/Dock/file exp icon.png" id="4_tefeu"]
+[ext_resource type="Texture2D" uid="uid://5t3fyqany3nt" path="res://assets/Dock/BraveIcon.png" id="5_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://ddh3brtwdkjjq" path="res://assets/Dock/All.png" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://dyvfhg4cbkr5d" path="res://scenes/popupscenes/cat_virus_pop_up.tscn" id="7_eh0v1"]
-[ext_resource type="PackedScene" uid="uid://dc5t4re66jk2i" path="res://scenes/vs_code.tscn" id="8_6a6wx"]
 [ext_resource type="PackedScene" uid="uid://tipkpnj40rl0" path="res://scenes/popupscenes/money_virus_pop_up.tscn" id="9_85g3d"]
-[ext_resource type="Script" uid="uid://72eunsxucj0u" path="res://pop_up_spawner.gd" id="9_sky72"]
+[ext_resource type="Script" uid="uid://72eunsxucj0u" path="res://scripts/pop_up_spawner.gd" id="9_sky72"]
 [ext_resource type="FontFile" uid="uid://dmdkaf5mkhs5b" path="res://assets/minecraftia/Minecraftia-Regular.ttf" id="11_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cc0v0i45qhj1v" path="res://scenes/brave_browser.tscn" id="12_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://ckn67estwubme" path="res://assets/Menu/Background.png" id="1_tefeu"]
-[ext_resource type="Texture2D" uid="uid://l4dm8lbvx0x0" path="res://assets/Dock/Dock.png" id="2_g31lc"]
-[ext_resource type="Texture2D" uid="uid://dgdbcmmovhqsl" path="res://assets/Dock/Vscode.png" id="4_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://bqn5ql1q34qrw" path="res://assets/Dock/file exp icon.png" id="4_tefeu"]
-[ext_resource type="Texture2D" uid="uid://5t3fyqany3nt" path="res://assets/Dock/Firefox.png" id="5_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://ddh3brtwdkjjq" path="res://assets/Dock/All.png" id="6_o6xl0"]
-[ext_resource type="Script" uid="uid://72eunsxucj0u" path="res://scripts/pop_up_spawner.gd" id="9_sky72"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g31lc"]
 content_margin_top = 2.0
@@ -26,9 +19,6 @@ content_margin_bottom = 2.0
 texture = ExtResource("2_g31lc")
 texture_margin_left = 4.0
 texture_margin_right = 4.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_knq72"]
-texture = ExtResource("6_tipki")
 
 [node name="Main" type="Control" unique_id=2128040512]
 layout_mode = 3
@@ -90,22 +80,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("5_o6xl0")
 
-[node name="CatVirusPopUp" parent="." unique_id=2098235997 instance=ExtResource("7_eh0v1")]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 16.0
-offset_right = 116.0
-offset_bottom = 70.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_knq72")
-
-[node name="VSCode" parent="." unique_id=1229481715 instance=ExtResource("8_6a6wx")]
-visible = true
-layout_mode = 0
-offset_left = 82.0
-offset_top = 25.0
-offset_right = 273.0
-offset_bottom = 141.0
-kod_havuzu = Array[String](["printf()", "ft_split()", "push_swap()", "minishell()", ""])
 [node name="ALL" type="TextureButton" parent="Dock/Grid" unique_id=508360966]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -136,13 +110,10 @@ text = "Kod YAZMAN gerek !"
 
 [node name="BraveBrowser" parent="." unique_id=72722398 instance=ExtResource("12_eb6dy")]
 layout_mode = 0
-offset_left = 46.0
-offset_top = 32.0
-offset_right = 259.0
-offset_bottom = 159.0
+offset_left = 24.0
+offset_top = 12.0
+offset_right = 239.0
+offset_bottom = 141.0
 
 [connection signal="gui_input" from="Dock/Grid/VSCode" to="PopUpSpawner" method="_on_vs_code_gui_input"]
-
-[editable path="Dock/Grid/VSCode"]
-[editable path="Dock/Grid/Explorer"]
 [connection signal="pressed" from="Dock/Grid/VSCode" to="PopUpSpawner" method="_on_vscode_pressed"]
