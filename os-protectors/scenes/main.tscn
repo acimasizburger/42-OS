@@ -12,6 +12,13 @@
 [ext_resource type="Script" uid="uid://72eunsxucj0u" path="res://pop_up_spawner.gd" id="9_sky72"]
 [ext_resource type="FontFile" uid="uid://dmdkaf5mkhs5b" path="res://assets/minecraftia/Minecraftia-Regular.ttf" id="11_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cc0v0i45qhj1v" path="res://scenes/brave_browser.tscn" id="12_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://ckn67estwubme" path="res://assets/Menu/Background.png" id="1_tefeu"]
+[ext_resource type="Texture2D" uid="uid://l4dm8lbvx0x0" path="res://assets/Dock/Dock.png" id="2_g31lc"]
+[ext_resource type="Texture2D" uid="uid://dgdbcmmovhqsl" path="res://assets/Dock/Vscode.png" id="4_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://bqn5ql1q34qrw" path="res://assets/Dock/file exp icon.png" id="4_tefeu"]
+[ext_resource type="Texture2D" uid="uid://5t3fyqany3nt" path="res://assets/Dock/Firefox.png" id="5_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://ddh3brtwdkjjq" path="res://assets/Dock/All.png" id="6_o6xl0"]
+[ext_resource type="Script" uid="uid://72eunsxucj0u" path="res://scripts/pop_up_spawner.gd" id="9_sky72"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g31lc"]
 content_margin_top = 2.0
@@ -45,35 +52,43 @@ offset_right = 160.0
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_am1vj")
+texture = ExtResource("1_tefeu")
 
 [node name="Dock" type="PanelContainer" parent="." unique_id=1931427154]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 154.0
-offset_right = 214.0
-offset_bottom = 176.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_g31lc")
 
 [node name="Grid" type="HBoxContainer" parent="Dock" unique_id=1858694613]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 10
-alignment = 1
+size_flags_vertical = 4
+theme_override_constants/separation = 8
 
-[node name="VSCode" parent="Dock/Grid" unique_id=1937944512 instance=ExtResource("6_tefeu")]
+[node name="VSCode" type="TextureButton" parent="Dock/Grid" unique_id=815187034]
 layout_mode = 2
-theme_override_constants/separation = 1
-
-[node name="Icon" parent="Dock/Grid/VSCode" index="0" unique_id=2139551096]
+size_flags_horizontal = 4
 texture_normal = ExtResource("4_o6xl0")
 
-[node name="Explorer" parent="Dock/Grid" unique_id=856997511 instance=ExtResource("6_tefeu")]
+[node name="File Explorer" type="TextureButton" parent="Dock/Grid" unique_id=1049170544]
 layout_mode = 2
-theme_override_constants/separation = 1
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_tefeu")
 
-[node name="Icon" parent="Dock/Grid/Explorer" index="0" unique_id=2139551096]
-texture_normal = ExtResource("4_o6xl0")
+[node name="Brave" type="TextureButton" parent="Dock/Grid" unique_id=1127367050]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_o6xl0")
 
 [node name="CatVirusPopUp" parent="." unique_id=2098235997 instance=ExtResource("7_eh0v1")]
 layout_mode = 0
@@ -91,6 +106,10 @@ offset_top = 25.0
 offset_right = 273.0
 offset_bottom = 141.0
 kod_havuzu = Array[String](["printf()", "ft_split()", "push_swap()", "minishell()", ""])
+[node name="ALL" type="TextureButton" parent="Dock/Grid" unique_id=508360966]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_o6xl0")
 
 [node name="PopUpSpawner" type="Control" parent="." unique_id=1692848858]
 anchors_preset = 0
@@ -126,3 +145,4 @@ offset_bottom = 159.0
 
 [editable path="Dock/Grid/VSCode"]
 [editable path="Dock/Grid/Explorer"]
+[connection signal="pressed" from="Dock/Grid/VSCode" to="PopUpSpawner" method="_on_vscode_pressed"]
