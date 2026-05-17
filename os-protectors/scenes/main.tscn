@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://nyaxmbhlxy67"]
 
-[ext_resource type="Texture2D" uid="uid://qf50klxqfvhi" path="res://assets/Menu/Background.png" id="1_tefeu"]
+[ext_resource type="Texture2D" uid="uid://ckn67estwubme" path="res://assets/Menu/Background.png" id="1_tefeu"]
 [ext_resource type="Texture2D" uid="uid://l4dm8lbvx0x0" path="res://assets/Dock/Dock.png" id="2_g31lc"]
 [ext_resource type="Texture2D" uid="uid://dgdbcmmovhqsl" path="res://assets/Dock/Vscode.png" id="4_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bqn5ql1q34qrw" path="res://assets/Dock/file exp icon.png" id="4_tefeu"]
-[ext_resource type="PackedScene" uid="uid://dyvfhg4cbkr5d" path="res://scenes/cat_virus_pop_up.tscn" id="7_eh0v1"]
+[ext_resource type="Texture2D" uid="uid://5t3fyqany3nt" path="res://assets/Dock/Firefox.png" id="5_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://ddh3brtwdkjjq" path="res://assets/Dock/All.png" id="6_o6xl0"]
 [ext_resource type="Script" uid="uid://72eunsxucj0u" path="res://scripts/pop_up_spawner.gd" id="9_sky72"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g31lc"]
@@ -68,12 +69,15 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("4_tefeu")
 
-[node name="CatVirusPopUp" parent="." unique_id=2098235997 instance=ExtResource("7_eh0v1")]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 16.0
-offset_right = 116.0
-offset_bottom = 70.0
+[node name="Brave" type="TextureButton" parent="Dock/Grid" unique_id=1127367050]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_o6xl0")
+
+[node name="ALL" type="TextureButton" parent="Dock/Grid" unique_id=508360966]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_o6xl0")
 
 [node name="PopUpSpawner" type="Control" parent="." unique_id=1692848858]
 anchors_preset = 0
@@ -84,3 +88,5 @@ script = ExtResource("9_sky72")
 [node name="Timer" type="Timer" parent="PopUpSpawner" unique_id=1647426441]
 wait_time = 4.0
 autostart = true
+
+[connection signal="pressed" from="Dock/Grid/VSCode" to="PopUpSpawner" method="_on_vscode_pressed"]
