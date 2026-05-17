@@ -3,9 +3,9 @@ extends Node
 signal görev_degisti(yeni_görev_metni)
 
 var gorev_havuzu = [
-	{"id": "vscode_yazilim", "taslak_metin": "MeloCode'a gir ve istenen C kodunu hatasız derle."},
-	{"id": "brave_evo", "taslak_metin": "Brave tarayıcısını aç ve EVO ayarını seç."},
-	{"id": "virus_sil", "taslak_metin": "Ekrana basılan virüs pop-up'larını temizle!"}
+	{"id": "vscode_yazilim", "taslak_metin": "VSCode'a gir ve istenen C kodunu hatasız derle."},
+	{"id": "brave_evo", "taslak_metin": "Brave tarayıcısını aç ve EVO slotu seç."},
+	{"id": "virus_sil", "taslak_metin": "Dosya Yöneticisindeki çöpleri sil"}
 ]
 
 var toplam_gorev_sayisi = 1

@@ -22,8 +22,6 @@ func paneli_kur():
 		referance_label.text = kod_havuzu[rastgele_indeks]
 	else:
 		print("Liste şu an boş, işlem yapılamaz!")
-
-	close_button.hide() 
 	
 	# giris yazisi
 	terminal_label.text = "Terminal hazır. VSCode'dan çıkmak için kodu hatasız derleyin."
@@ -44,7 +42,6 @@ func _on_submitt_button_pressed() -> void:
 	if yazilan_kod == beklenen_kod:
 		terminal_label.text = "Başarılı: Kod derlendi! Çıkış yapabilirsiniz."
 		terminal_label.modulate = Color(0, 1, 0) 
-		close_button.show()
 		TaskManager.gorevi_tamamla("vscode_yazilim")
 	else:
 		terminal_label.text = "Başarısız: Kodu birebir aynı yazamadınız. Lütfen tekrar deneyin."

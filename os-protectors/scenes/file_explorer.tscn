@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://4sbc7l3uw6lb"]
+
+[ext_resource type="Texture2D" uid="uid://dqrh3hkxdn5n3" path="res://assets/Apps/file exp.png" id="1_ks2b6"]
+
+[node name="File Explorer" type="TextureRect" unique_id=154662068]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ks2b6")
