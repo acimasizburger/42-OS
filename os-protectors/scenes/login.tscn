@@ -107,5 +107,5 @@ texture_normal = ExtResource("7_bw5rt")
 [node name="OAuthManager" type="Node" parent="." unique_id=1923506802]
 script = ExtResource("8_31byv")
 
-[connection signal="pressed" from="Password/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Password/Button" to="OAuthManager" method="giris_yap_butonuna_basildi"]
 [connection signal="pressed" from="Github" to="." method="_on_github_button_pressed"]
