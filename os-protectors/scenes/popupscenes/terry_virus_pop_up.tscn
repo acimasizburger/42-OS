@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dg0vb2phyae27"]
+
+[ext_resource type="PackedScene" uid="uid://dafpovwcn75ja" path="res://scenes/popupscenes/base_virus_pop_up.tscn" id="1_b3fpk"]
+[ext_resource type="Texture2D" uid="uid://bpnv2cx8nb1pw" path="res://assets/pop ups/a.png" id="2_vcycy"]
+
+[node name="BaseVirusPopUp" unique_id=2098235997 instance=ExtResource("1_b3fpk")]
+virus_adi = "TerryDavisIsCalling.dll"
+virus_resmi = ExtResource("2_vcycy")
+yonlendirilecek_url = "https://www.youtube.com/shorts/0y2KrxcxGwE"

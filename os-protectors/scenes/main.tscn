@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://nyaxmbhlxy67"]
 
-[ext_resource type="Script" uid="uid://cd54d3gpa7d52" path="res://scripts/main.gd" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://ckn67estwubme" path="res://assets/Menu/Background.png" id="1_tefeu"]
+[ext_resource type="Script" uid="uid://cd54d3gpa7d52" path="res://scripts/main.gd" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://cxblsdaas0d7r" path="res://assets/Menu/Topbar.png" id="3_trceg"]
-[ext_resource type="Texture2D" uid="uid://dt3ek8y2pxdlb" path="res://assets/Menu/Layer 3.png" id="12_trceg"]
 [ext_resource type="Texture2D" uid="uid://dgdbcmmovhqsl" path="res://assets/Dock/Vscode.png" id="4_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bqn5ql1q34qrw" path="res://assets/Dock/file exp icon.png" id="4_tefeu"]
 [ext_resource type="Texture2D" uid="uid://5t3fyqany3nt" path="res://assets/Dock/BraveIcon.png" id="5_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://ddh3brtwdkjjq" path="res://assets/Dock/All.png" id="6_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://436f3ltdtf7d" path="res://assets/market.png" id="8_trceg"]
-[ext_resource type="Script" uid="uid://72eunsxucj0u" path="res://scripts/pop_up_spawner.gd" id="9_sky72"]
 [ext_resource type="PackedScene" uid="uid://dyvfhg4cbkr5d" path="res://scenes/popupscenes/cat_virus_pop_up.tscn" id="9_85g3d"]
+[ext_resource type="Script" uid="uid://72eunsxucj0u" path="res://scripts/pop_up_spawner.gd" id="9_sky72"]
 [ext_resource type="PackedScene" uid="uid://tipkpnj40rl0" path="res://scenes/popupscenes/money_virus_pop_up.tscn" id="11_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://dt3ek8y2pxdlb" path="res://assets/Menu/Layer 3.png" id="12_trceg"]
 [ext_resource type="Theme" uid="uid://lv0m26ck1q5p" path="res://font_theme.tres" id="13_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://dg0vb2phyae27" path="res://scenes/popupscenes/terry_virus_pop_up.tscn" id="13_jkv2x"]
 [ext_resource type="FontFile" uid="uid://dmdkaf5mkhs5b" path="res://assets/minecraftia/Minecraftia-Regular.ttf" id="13_trceg"]
+[ext_resource type="PackedScene" uid="uid://ceo8uct6oynu4" path="res://scenes/popupscenes/better_code_virus_pop_up.tscn" id="14_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://c8mspipksojvi" path="res://assets/adblock.png" id="17_muem4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eb6dy"]
 texture = ExtResource("12_trceg")
@@ -106,7 +109,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("9_sky72")
-virus_sahneleri = Array[PackedScene]([ExtResource("9_85g3d"), ExtResource("11_eb6dy")])
+virus_sahneleri = Array[PackedScene]([ExtResource("9_85g3d"), ExtResource("11_eb6dy"), ExtResource("13_jkv2x"), ExtResource("14_jbj1t")])
 
 [node name="Timer" type="Timer" parent="PopUpSpawner" unique_id=1647426441]
 wait_time = 4.0
@@ -142,28 +145,69 @@ theme_override_fonts/font = ExtResource("13_trceg")
 theme_override_font_sizes/font_size = 10
 
 [node name="GameOverLabel" type="Label" parent="." unique_id=700309243]
+visible = false
 layout_mode = 0
-offset_left = 104.0
-offset_top = 75.0
-offset_right = 210.0
-offset_bottom = 103.0
-theme_override_colors/font_color = Color(0.77133447, 0.12272642, 0, 1)
+offset_left = 82.0
+offset_top = 65.0
+offset_right = 251.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0.55582786, 0.0036309839, 0.9239688, 1)
 theme_override_fonts/font = ExtResource("13_trceg")
-text = "OYUN BITTI"
+theme_override_font_sizes/font_size = 25
+text = "BLACKHOLE"
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=1402810685]
 layout_mode = 0
-offset_left = 277.0
-offset_top = 44.0
-offset_right = 313.0
-offset_bottom = 89.0
+offset_left = 281.0
+offset_top = 43.0
+offset_right = 317.0
+offset_bottom = 80.0
 theme_override_constants/line_spacing = -5
 theme_override_fonts/font = ExtResource("13_trceg")
 theme_override_font_sizes/font_size = 12
 text = "SKOR
-     0"
+    0"
+
+[node name="BuffUI" type="HBoxContainer" parent="." unique_id=831382555]
+visible = false
+layout_mode = 0
+offset_left = 288.0
+offset_top = 79.0
+offset_right = 341.0
+offset_bottom = 151.0
+
+[node name="TextureRect" type="TextureRect" parent="BuffUI" unique_id=373994432]
+custom_minimum_size = Vector2(3.79, 0)
+layout_mode = 2
+texture = ExtResource("17_muem4")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="buff_label" type="Label" parent="BuffUI" unique_id=792453778]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_trceg")
+theme_override_font_sizes/font_size = 10
+text = "10"
+
+[node name="RestartButton" type="Button" parent="." unique_id=86071367]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.512
+anchor_top = 0.628
+anchor_right = 0.512
+anchor_bottom = 0.628
+offset_left = -61.84001
+offset_top = -18.04
+offset_right = 62.15999
+offset_bottom = 17.96
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("13_trceg")
+text = "AÇ KAPA YAP"
 
 [connection signal="pressed" from="Dock/Grid/VSCode" to="PopUpSpawner" method="_on_vscode_pressed"]
 [connection signal="pressed" from="Dock/Grid/File Explorer" to="PopUpSpawner" method="_on_explorer_pressed"]
 [connection signal="pressed" from="Dock/Grid/Brave" to="PopUpSpawner" method="_on_brave_pressed"]
 [connection signal="pressed" from="Dock/Grid/Market" to="PopUpSpawner" method="_on_market_pressed"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

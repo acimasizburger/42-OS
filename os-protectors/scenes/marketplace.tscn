@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://3abw8o6258wn" path="res://assets/marketplace.png" id="1_dplui"]
 [ext_resource type="Script" uid="uid://mey4qo7nl6xs" path="res://scripts/marketplace.gd" id="2_wvm54"]
+[ext_resource type="Texture2D" uid="uid://c8mspipksojvi" path="res://assets/adblock.png" id="3_4c850"]
+[ext_resource type="FontFile" uid="uid://dmdkaf5mkhs5b" path="res://assets/minecraftia/Minecraftia-Regular.ttf" id="4_tp35m"]
+[ext_resource type="Texture2D" uid="uid://clcah6ag2i7hw" path="res://assets/trashcan.png" id="5_0bc21"]
 
 [node name="Marketplace" type="TextureRect" unique_id=1642604393]
 offset_right = 156.0
@@ -22,5 +25,70 @@ offset_right = 154.0
 offset_bottom = 10.0
 flat = true
 
+[node name="BuyBlockerButton" type="TextureButton" parent="." unique_id=1914460974]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 19.0
+offset_right = -110.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_4c850")
+
+[node name="BlockerPrice" type="Label" parent="BuyBlockerButton" unique_id=1615184237]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -2.0
+offset_right = 9.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("4_tp35m")
+theme_override_font_sizes/font_size = 8
+text = "150
+SCR"
+
+[node name="BuyClearButton" type="TextureButton" parent="." unique_id=1112250034]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = 27.0
+offset_right = -74.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_0bc21")
+
+[node name="ClearPrice" type="Label" parent="BuyClearButton" unique_id=1726395385]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_right = 9.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("4_tp35m")
+theme_override_font_sizes/font_size = 8
+text = "  50
+SCR"
+
 [connection signal="gui_input" from="Topbar" to="." method="_on_market_gui_input"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="BuyBlockerButton" to="." method="_on_buy_blocker_button_pressed"]
+[connection signal="pressed" from="BuyClearButton" to="." method="_on_buy_clear_button_pressed"]

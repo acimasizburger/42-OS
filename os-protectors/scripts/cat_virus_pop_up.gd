@@ -23,6 +23,11 @@ func _on_quit_button_pressed():
 func _on_virus_image_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		OS.shell_open(yonlendirilecek_url) # Sabit link yerine yukarıdaki değişkeni çağırıyor
+		var main_node = get_tree().get_first_node_in_group("main_oyun")
+		if main_node:
+			main_node.zaman_cezasi_ver(5.0) # 5 Saniye ceza ver!
+			print("YANLIŞ YERE TIKLADIN! -5 Saniye")
+			queue_free()
 
 # --- 1. SÜRÜKLEME İŞLEMİ (BİREBİR AYNI) ---
 func _process(_delta):

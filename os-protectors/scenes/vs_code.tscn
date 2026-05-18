@@ -21,7 +21,7 @@ offset_right = 207.0
 offset_bottom = 129.0
 texture = ExtResource("1_o5h1s")
 script = ExtResource("2_mgo35")
-kod_havuzu = Array[String](["ft_printf()", "ft_split()", "int main(void)"])
+kod_havuzu = Array[String](["ft_printf()", "ft_split()", "int main(void)", "minishell()", "push_swap()", "ft_putchar()"])
 
 [node name="VsCodeName" type="Label" parent="." unique_id=738499809]
 texture_filter = 1

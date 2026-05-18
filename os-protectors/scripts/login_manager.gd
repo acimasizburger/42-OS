@@ -9,4 +9,5 @@ func _on_github_button_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_packed(Main)
+	# $OAuthManager.giris_yap_butonuna_basildi() Sadece 42 giriş sayfasını açar, tarayıcı o sayfaya gider.
+	get_tree().change_scene_to_packed(Main) # Debug Test Icin

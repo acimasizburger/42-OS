@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ceo8uct6oynu4"]
+
+[ext_resource type="PackedScene" uid="uid://dafpovwcn75ja" path="res://scenes/popupscenes/base_virus_pop_up.tscn" id="1_kyhdo"]
+[ext_resource type="Texture2D" uid="uid://dk60l58h63ak1" path="res://assets/pop ups/popupcoding.png" id="2_kvttc"]
+
+[node name="BetterCodeVirusPopUp" unique_id=2098235997 instance=ExtResource("1_kyhdo")]
+virus_adi = "WantToCodeBetter.bat"
+virus_resmi = ExtResource("2_kvttc")
+yonlendirilecek_url = "https://www.theseniordev.com/blog/why-i-stopped-using-ai-as-a-senior-developer-after-150-000-lines-of-ai-generated-code"
